@@ -2,8 +2,6 @@
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 
-# chezmoi
-alias cm="chezmoi"
 
 ######################
 # navigation
@@ -27,8 +25,38 @@ alias sys='cd $WORK/aerosys'
 
 
 ######################
+# APPS
+
+alias cm="chezmoi"
+alias sublime="open -a 'Sublime Text'"
+alias code="open -a 'Visual Studio Code'"
+alias xcode="open -a Xcode"
+alias appcode="open -a AppCode"
+alias android="open -a 'Android Studio'"
+alias webstorm="open -a WebStorm"
+alias phpstorm="open -a PhpStorm"
+alias idea="open -a 'IntelliJ IDEA'"
+alias pycharm="open -a 'PyCharm'"
+
+######################
 # Git
 alias g="git"
+
+
+######################
+# DOCKER
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; } ## Show all alias related docker
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+dcstopa() { docker stop $(docker ps -a -q); } # Stop all containers
+alias dcrma='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)' # Stop and Remove all containers
+alias di="docker image ls"
+alias dia="docker image ls -a"
+alias dirm="docker image rm"
+alias dc="docker compose"
+alias dcu="docker compose up"
+alias dcd="docker compose down"
+
 
 ######################
 # cleanup & update
@@ -50,9 +78,6 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 
 
 ######################
-
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"

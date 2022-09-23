@@ -1,0 +1,119 @@
+[alias]
+	# list all user configurations
+	gl = config --global -l								
+
+	# short list of all commits
+	ll = log --oneline									
+	
+	# see the last commit
+	last = log -1 HEAD --stat 							
+	graph = log --all --decorate --oneline --graph		
+	
+	# search within your commits `git se test`
+	se = !git rev-list --all | xargs git grep -F
+
+	# to output a less verbose status with branch information 
+	s = status -sb 				
+
+	# Show the diff between the latest commit and the current state.
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state.
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	# Pull in remote changes for the current repository and all its submodules.
+	p = pull --recurse-submodules
+
+	# Clone a repository including all submodules.
+	c = clone --recursive
+
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch --all
+	remotes = remote --verbose
+
+	# List aliases.
+	aliases = config --get-regexp alias
+
+	# Amend the currently staged files to the latest commit.
+	amend = commit --amend --reuse-message=HEAD
+
+	# Interactive rebase with the given number of latest commits.
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+	# Remove the old tag with this name and tag the latest commit with it.
+	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+
+	# Find tags containing commit
+	ft = "!f() { git describe --always --contains $1; }; f"
+
+	# Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+	# Remove branches that have already been merged with main.
+	# a.k.a. ‘delete merged’
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+
+	cm = commit -m										# shorten command
+	save = !git add -A && git commit -m 				# stage and commit all changes
+	undo = reset HEAD~1 --mixed							# Rollback changes 
+	res = !git reset --hard								# cllean all changes
+	done = !git push origin HEAD						# push changes to current branch
+	up = !git pull origin $(git rev-parse --abbrev-ref HEAD)
+
+	brd = branch -D										# delets beranch `git del feat/test-1`
+	br  = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	rv = remote -v										# shorten command
+
+	# Switch to a branch, creating it if necessary.
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	co = checkout
+	main = go main
+	dev = go develop
+
+	
+	# deletes all local branches (except master,develop,main,release) that are already merged
+	cleanup = "!git branch --merged | grep  -v ’\\*\\|master\\|develop\\|main\\|release’ | xargs -n 1 git branch -d"
+	in = "!git remote update -p; git log ..@{u}"
+
+
+	# Show the user email for the current repository.
+	whoami = config user.email
+
+	# List contributors with number of commits.
+	contributors = shortlog --summary --numbered
+
+
+[credential]
+	helper = osxkeychain
+
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[pull]
+	rebase = true
+
+[color]
+	ui = auto
+
+[user]
+	name = Phillipp Bertram
+	email = pbertram@aerosys.io
+
+[init]
+	defaultBranch = main
