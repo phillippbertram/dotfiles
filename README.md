@@ -39,6 +39,8 @@ $ chezmoi init git@github.com:phillippbertram/dotfiles.git
 
 wget
 curl
+thefuck
+fzf
 
 Check if brew is available
 
