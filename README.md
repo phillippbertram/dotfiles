@@ -41,6 +41,7 @@ wget
 curl
 thefuck
 fzf
+autojump
 
 Check if brew is available
 
@@ -51,4 +52,12 @@ Check if brew is available
 ```bash
 $ brew install zsh
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### zsh-autosuggestions
+
+https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
