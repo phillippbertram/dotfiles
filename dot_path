@@ -1,5 +1,5 @@
 export PATH="/usr/local/sbin:$PATH"
-export PATH=$HOME/Development/tools/flutter/bin:$PATH
+export PATH=$HOME/dev/tools/flutter/bin:$PATH
 
 
 export GOPATH="$HOME/go"
