@@ -14,7 +14,7 @@ alias -- -="cd -"
 
 ######################
 # Shortcuts
-export DEV="$HOME/Development"
+export DEV="$HOME/dev"
 export WORK="$DEV/work"
 
 alias desk='cd $HOME/Desktop'
