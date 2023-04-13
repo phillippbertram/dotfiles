@@ -1,2 +1,8 @@
 export PATH="/usr/local/sbin:$PATH"
 export PATH=$HOME/Development/tools/flutter/bin:$PATH
+
+
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+export PATH="$PATH":"$HOME/.pub-cache/bin"

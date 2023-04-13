@@ -21,8 +21,10 @@ alias desk='cd $HOME/Desktop'
 alias dl="cd ~/Downloads"
 alias dev='cd $DEV'
 alias work='cd $DEV/work'
-alias sys='cd $WORK/aerosys'
-
+alias as='cd $WORK/aerosys'
+alias dmain='cd $WORK/aerosys/dicop-project/dicop-prototype'
+alias dvoice='cd $WORK/aerosys/dicop-project/dicop-voice'
+alias drive="cd '/Users/phillipp/Google Drive/My Drive'"
 
 ######################
 # APPS
