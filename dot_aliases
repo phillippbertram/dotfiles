@@ -28,6 +28,7 @@ alias dvoice='cd $WORK/aerosys/dicop-project/dicop-voice'
 alias drive="cd '/Users/phillipp/Google Drive/My Drive'"
 
 alias vim="nvim"
+alias tf="terraform"
 
 ######################
 # APPS
