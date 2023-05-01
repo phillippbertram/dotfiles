@@ -15,16 +15,18 @@ alias -- -="cd -"
 ######################
 # Shortcuts
 export DEV="$HOME/dev"
-export WORK="$DEV/work"
+export AEROSYS="$DEV/aerosys"
+export PRIVATE="$DEV/private"
+export FREELANCING="$DEV/freelancing"
 
 alias desk='cd $HOME/Desktop'
 alias dl="cd ~/Downloads"
 alias dev='cd $DEV'
-alias work='cd $DEV/work'
-alias priv='cd $DEV/private'
-alias as='cd $WORK/aerosys'
-alias dmain='cd $WORK/aerosys/dicop-project/dicop-prototype'
-alias dvoice='cd $WORK/aerosys/dicop-project/dicop-voice'
+alias freelancing='cd $FREELANCING'
+alias priv='cd $PRIVATE'
+alias as='cd $AEROSYS'
+alias dmain='cd $AEROSYS/dicop-project/dicop-prototype'
+alias dvoice='cd $AEROSYS/dicop-project/dicop-voice'
 alias drive="cd '/Users/phillipp/Google Drive/My Drive'"
 
 alias vim="nvim"
