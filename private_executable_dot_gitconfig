@@ -111,9 +111,12 @@
 [color]
 	ui = auto
 
-[user]
-	name = Phillipp Bertram
-	email = pbertram@aerosys.io
-
 [init]
 	defaultBranch = main
+
+[user]
+	name = Phillipp Bertram
+	email = me@phillippbertram.de
+
+[includeIf "gitdir:~/dev/aerosys/"]
+  	path = ~/.gitconfig-aerosys
