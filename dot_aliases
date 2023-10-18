@@ -23,11 +23,14 @@ alias desk='cd $HOME/Desktop'
 alias dl="cd ~/Downloads"
 alias dev='cd $DEV'
 alias freelancing='cd $FREELANCING'
+alias free=freelancing
 alias priv='cd $PRIVATE'
 alias as='cd $AEROSYS'
 alias dmain='cd $AEROSYS/dicop-project/dicop-prototype'
 alias dvoice='cd $AEROSYS/dicop-project/dicop-voice'
 alias drive="cd '/Users/phillipp/Google Drive/My Drive'"
+alias jung="cd $FREELANCING/jung"
+alias jios="cd $FREELANCING/jung/lb-connect-ios"
 
 alias vim="nvim"
 alias tf="terraform"
@@ -45,6 +48,10 @@ alias webstorm="open -a WebStorm"
 alias phpstorm="open -a PhpStorm"
 alias idea="open -a 'IntelliJ IDEA'"
 alias pycharm="open -a 'PyCharm'"
+
+######################
+# Xcode
+alias rmxcdata="rm -rf ~/Library/Developer/Xcode/DerivedData/*"
 
 ######################
 # Git
