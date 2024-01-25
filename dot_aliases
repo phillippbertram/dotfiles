@@ -24,13 +24,18 @@ alias dl="cd ~/Downloads"
 alias dev='cd $DEV'
 alias freelancing='cd $FREELANCING'
 alias free=freelancing
-alias priv='cd $PRIVATE'
-alias as='cd $AEROSYS'
+alias private='cd $PRIVATE'
+alias priv=private
+alias projects=private
+alias aerosys='cd $AEROSYS'
+alias as=aerosys
 alias dmain='cd $AEROSYS/dicop-project/dicop-prototype'
 alias dvoice='cd $AEROSYS/dicop-project/dicop-voice'
 alias drive="cd '/Users/phillipp/Google Drive/My Drive'"
+
 alias jung="cd $FREELANCING/jung"
 alias jios="cd $FREELANCING/jung/lb-connect-ios"
+alias trade="cd $FREELANCING/bertram_meyer"
 
 alias vim="nvim"
 alias tf="terraform"
@@ -56,6 +61,7 @@ alias rmxcdata="rm -rf ~/Library/Developer/Xcode/DerivedData/*"
 ######################
 # Git
 alias g="git"
+alias switch="git switch"
 
 ######################
 # Yarn

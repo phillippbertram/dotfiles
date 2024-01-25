@@ -56,11 +56,6 @@
 	# Find commits by commit message
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
-	# Remove branches that have already been merged with main.
-	# a.k.a. ‘delete merged’
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-
-
 	cm = commit -m										# shorten command
 	save = !git add -A && git commit -m 				# stage and commit all changes
 	undo = reset HEAD~1 --mixed							# Rollback changes 
@@ -73,14 +68,21 @@
 	rv = remote -v										# shorten command
 
 	# Switch to a branch, creating it if necessary.
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	go = "!f() { git switch -b \"$1\" 2> /dev/null || git switch \"$1\"; }; f"
 	co = checkout
 	main = go main
 	dev = go develop
-
 	
+
+
+	# Remove branches that have already been merged with main.
+	# a.k.a. ‘delete merged’
+	# dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	delete-gone = "!~/git_remove_stale_branches.sh"
+
 	# deletes all local branches (except master,develop,main,release) that are already merged
-	cleanup = "!git branch --merged | grep  -v ’\\*\\|master\\|develop\\|main\\|release’ | xargs -n 1 git branch -d"
+	#cleanup = "!git branch --merged | grep  -v ’\\*\\|master\\|develop\\|main\\|release’ | xargs -n 1 git branch -d"
+	cleanup = "!git delete-gone"
 	in = "!git remote update -p; git log ..@{u}"
 
 
@@ -120,3 +122,4 @@
 
 [includeIf "gitdir:~/dev/aerosys/"]
   	path = ~/.gitconfig-aerosys
+
