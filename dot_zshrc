@@ -45,3 +45,12 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 #rbenv
 eval "$(rbenv init - zsh)"
 
+# show welcome message
+# Check if both fortune and cowsay are installed
+if command -v fortune &> /dev/null && command -v cowsay &> /dev/null; then
+    # If both are installed, run the command
+    fortune | cowsay -pn
+else
+    # If either command is not found, print an error message
+    echo "Both fortune and cowsay need to be installed to run this script."
+fi
