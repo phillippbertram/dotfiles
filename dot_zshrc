@@ -49,7 +49,7 @@ eval "$(rbenv init - zsh)"
 # Check if both fortune and cowsay are installed
 if command -v fortune &> /dev/null && command -v cowsay &> /dev/null; then
     # If both are installed, run the command
-    fortune | cowsay -pn
+    fortune -s | cowsay -pn
 else
     # If either command is not found, print an error message
     echo "Both fortune and cowsay need to be installed to run this script."

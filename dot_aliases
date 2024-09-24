@@ -36,6 +36,8 @@ alias drive="cd '/Users/phillipp/Google Drive/My Drive'"
 alias jung="cd $FREELANCING/jung"
 alias jios="cd $FREELANCING/jung/lb-connect-ios"
 alias trade="cd $FREELANCING/bertram_meyer"
+alias pattern="cd $FREELANCING/bertram_meyer/better-pattern"
+alias mate="cd $PRIVATE/deploy-mate"
 
 alias vim="nvim"
 alias tf="terraform"
@@ -99,7 +101,7 @@ alias remove_ds_store="find . -type f -name '*.DS_Store' -ls -delete"
 # Finally, clear download history from quarantine. https://mths.be/bum
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
-alias delete-node-modules='find . -name "node_modules" -type d -prune -exec rm -rf "{}" +'
+alias delete-node-modules='find . -name "node_modules" -type d -prune -exec echo "Deleting {}" \; -exec rm -rf "{}" +'
 
 ######################
 # networking
